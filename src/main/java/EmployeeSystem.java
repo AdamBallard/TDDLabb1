@@ -12,9 +12,7 @@ public class EmployeeSystem {
     public Employee getEmployee(int employeeID) {
         for (Employee employee : EmployeeList) {
             if (employee.getID() == employeeID) {
-                return employee;
-            }
-        }
+                return employee; } }
         return null;
     }
 
@@ -22,10 +20,25 @@ public class EmployeeSystem {
 
             for (Employee employee : EmployeeList) {
                 if (employee.getID() == employeeID) {
-                    EmployeeList.remove(employeeID);
-                }
-            }
+                    EmployeeList.remove(employee); } }
         }
 
+    public void increaseAllSalaries(double i) {
+        if(i<=100 && i >= 0) {
+            i = 1 + (i / 100);
+            for (Employee employee : EmployeeList) {
+                employee.setSalary(employee.getSalary() * i);
+            } }
     }
+
+
+    public void increaseSalaryForEmployee(int id, double procent) {
+        if(procent<=100 && procent >= 0){
+        procent = 1+(procent/100);
+        for (Employee employee : EmployeeList){
+            if(employee.getID() == id){
+                employee.setSalary(employee.getSalary()*procent); } }
+
+    }
+  }}
 

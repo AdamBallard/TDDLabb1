@@ -42,9 +42,7 @@ public class Employee {
         this.age = age;
     }
 
-    public int getID() {
-        return employeeRealID;
-    }
+    public int getID() { return employeeRealID; }
 
     public double getSalary() {
         return salary;

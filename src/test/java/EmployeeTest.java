@@ -58,7 +58,6 @@ public class EmployeeTest {
     @DisplayName("Test employee ID")
     void testEmployeeID() {
 
-      // assertTrue(testObject.getID() instanceof Integer.TYPE);
         assertTrue(Integer.class.isInstance(testObject.getID())); // Integer klassen besitter metoden isInstance().
     }
 
@@ -95,6 +94,8 @@ public class EmployeeTest {
     @Test
     @DisplayName("ToString Test")
     void testToString(){
-        assertEquals("{ Name:Vincent Adler Age: 28 EmployeeID: 1 Salary: 55000.0 }",testObject.toString());
+        assertEquals("{ Name:Vincent Adler Age: 28 EmployeeID: 2 Salary: 55000.0 }",testObject.toString());
     }
+
+
 }
