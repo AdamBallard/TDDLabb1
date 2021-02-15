@@ -18,9 +18,7 @@ public class EmployeeSystem {
 
     public void removeEmployeeToList(int employeeID) {
 
-            for (Employee employee : EmployeeList) {
-                if (employee.getID() == employeeID) {
-                    EmployeeList.remove(employee); } }
+        EmployeeList.removeIf(employee -> employee.getID() == employeeID);
         }
 
     public void increaseAllSalaries(double i) {

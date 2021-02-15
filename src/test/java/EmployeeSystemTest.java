@@ -18,12 +18,6 @@ public class EmployeeSystemTest {
 
     @Test
     @DisplayName("Yeeeey")
-    void testForCreatingEmployeeSystem() {
-
-    }
-
-    @Test
-    @DisplayName("Yeeeey")
     void addEmployeeToList() {
         testObject.addEmployeeToList(testPersonal);
         assertEquals(testPersonal, testObject.getEmployee(1));
@@ -35,7 +29,7 @@ public class EmployeeSystemTest {
     @DisplayName("Yeeeey")
     void removeEmployeeFromList() {
         testObject.addEmployeeToList(testPersonal);
-        testObject.addEmployeeToList(testPersonal2);
+        // testObject.addEmployeeToList(testPersonal2);
         testObject.removeEmployeeToList(testPersonal.getID());
         assertNull(testObject.getEmployee(testPersonal.getID()));
     }
@@ -69,9 +63,16 @@ public class EmployeeSystemTest {
     @Test
     @DisplayName("IncreaseSalaryTest")
     void testIncreaseEmployeeSalaryTest(){
+        testObject.addEmployeeToList(testPersonal2);
         testObject.addEmployeeToList(testPersonal);
         testObject.increaseSalaryForEmployee(testPersonal.getID(), 2);
-        assertEquals(56100, testPersonal.getSalary());
+
+        assertAll (
+                () ->     assertEquals(56100, testPersonal.getSalary()),
+                () ->     assertEquals(55000, testPersonal2.getSalary())
+
+        );
+
     }
 
     @Test
