@@ -17,7 +17,7 @@ public class EmployeeSystemTest {
 
 
     @Test
-    @DisplayName("Yeeeey")
+    @DisplayName("AddToListTest")
     void addEmployeeToList() {
         testObject.addEmployeeToList(testPersonal);
         assertEquals(testPersonal, testObject.getEmployee(1));
@@ -26,7 +26,7 @@ public class EmployeeSystemTest {
 
 
     @Test
-    @DisplayName("Yeeeey")
+    @DisplayName("RemoveFromArrayListTest")
     void removeEmployeeFromList() {
         testObject.addEmployeeToList(testPersonal);
         // testObject.addEmployeeToList(testPersonal2);
@@ -38,8 +38,13 @@ public class EmployeeSystemTest {
     @DisplayName("IncreaseSalaryTest")
     void testIncreaseAllSalaryTest(){
         testObject.addEmployeeToList(testPersonal);
+        testObject.addEmployeeToList(testPersonal2);
         testObject.increaseAllSalaries(100);
-        assertEquals(110000, testPersonal.getSalary());
+        assertAll(
+                () ->    assertEquals(110000, testPersonal.getSalary()),
+                () ->    assertEquals(110000, testPersonal2.getSalary())
+        );
+
     }
 
     @Test

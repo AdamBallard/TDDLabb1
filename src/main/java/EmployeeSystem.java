@@ -21,11 +21,11 @@ public class EmployeeSystem {
         EmployeeList.removeIf(employee -> employee.getID() == employeeID);
         }
 
-    public void increaseAllSalaries(double i) {
-        if(i<=100 && i >= 0) {
-            i = 1 + (i / 100);
+    public void increaseAllSalaries(double procent) {
+        if(procent<=100 && procent >= 0) {
+            procent = 1 + (procent / 100);
             for (Employee employee : EmployeeList) {
-                employee.setSalary(employee.getSalary() * i);
+                employee.setSalary(employee.getSalary() * procent);
             } }
     }
 
